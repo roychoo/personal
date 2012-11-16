@@ -31,5 +31,5 @@ app.get('/', routes.index);
 app.get('/users', user.list);
 
 http.createServer(app).listen(8000, function(){
-  console.log("Express server listening on port 8000";
+  console.log("Express server listening on port 8000");
 });
