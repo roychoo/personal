@@ -1,0 +1,44 @@
+doctype 5
+html
+  head
+    title= title
+    link(rel='stylesheet', href='http://fonts.googleapis.com/css?family=Lobster')	
+    link(rel='stylesheet', href='/stylesheets/lib/bootstrap.min.css')
+    link(rel='stylesheet', href='/stylesheets/style.css')	
+  body
+    block content
+    script(type='text/javascript', src='http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js')
+    script(type='text/javascript', src='/javascripts/min.jquery.scrollpath.js')
+    script(type='text/javascript')
+      // Get the path object from the plugin.
+      var path = $.fn.scrollPath("getPath");
+
+      // Start the path at the center of #me
+      path.moveTo( 300, 150, { name: "me" });
+      // Vertical line going right towards the #about section
+      path.lineTo( 1600, 150, { name: "about" });
+      // Arc down towards the design gallery, rotating a quarter of a circle along the way
+      path.arc( 1600, 975, 825, -Math.PI/2, 0, false, { rotate: -Math.PI/2 }); 
+      // Short vertical line to the design gallery
+      path.lineTo( 2425, 1150, { name: "designed" });
+      // Diagonal line down to the development gallery
+      path.lineTo( 1050, 1450, { name: "developed" });
+      // Another line diagonal going up towards to the contact section
+      path.lineTo( -525, 1050, { name: "contact" });
+      // Short vertical line upwards
+      path.lineTo( -525, 975 );
+      // The last arc that connects back to the beginning,
+      // going clockwise from the left to the top while rotating.
+      path.arc( 300, 975, 825, -Math.PI, -Math.PI/2, false, { rotate: -Math.PI } );
+      // Rotate back to original angle.
+      path.rotate( 0 );
+
+      // Initiate the plugin
+      $(".wrapper").scrollPath({ drawPath: false, wrapAround: true });
+
+      // Set navigation link click behavior to animate to the different sections
+      // over a duration of 2 seconds.
+      $("nav a").click(function(e) {
+        e.preventDefault();
+        $.fn.scrollPath("scrollTo", this.hash.substring(1), 2000);
+      });

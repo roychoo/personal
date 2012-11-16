@@ -1,0 +1,86 @@
+body { 
+	color: #383838; font-family: 'Lobster', sans-serif; text-align: center; overflow: hidden; 
+	/* IE10 Consumer Preview */ 
+	background-image: -ms-radial-gradient(center, circle farthest-corner, #FFFFFF 0%, #737373 100%);
+
+	/* Mozilla Firefox */ 
+	background-image: -moz-radial-gradient(center, circle farthest-corner, #FFFFFF 0%, #737373 100%);
+
+	/* Opera */ 
+	background-image: -o-radial-gradient(center, circle farthest-corner, #FFFFFF 0%, #737373 100%);
+
+	/* Webkit (Safari/Chrome 10) */ 
+	background-image: -webkit-gradient(radial, center center, 0, center center, 497, color-stop(0, #FFFFFF), color-stop(1, #737373));
+
+	/* Webkit (Chrome 11+) */ 
+	background-image: -webkit-radial-gradient(center, circle farthest-corner, #FFFFFF 0%, #737373 100%);
+
+	/* W3C Markup, IE10 Release Preview */ 
+	background-image: radial-gradient(circle farthest-corner at center, #FFFFFF 0%, #737373 100%);
+}
+
+
+
+h1, h2 { font-family: 'Lobster', Georgia, serif; font-weight: normal; line-height: 70px;}
+
+header h1 { font-size: 92px; }
+
+header h2, section h1 { font-size: 42px; }
+
+p { font-size: 20px; line-height: 1.6em; text-align: left; width: 600px; padding: 0 100px; }
+
+a { color: #0000ff; font-weight: bold; }
+
+header, section { margin: 40px auto;}
+
+section { display: inline-block; }
+
+.wrapper { position: relative; }
+
+.gallery { list-style-type: none; padding: 5px; width: 500px; }
+.gallery li { display: inline-block; margin: 5px; }
+.gallery img { border: 5px solid #fff; }
+
+#me, #about, #designed, #developed, #contact { position: absolute; }
+
+#designed, #developed, #contact {
+	-webkit-transform: rotate(90deg);
+	-moz-transform: rotate(90deg);
+	-o-transform: rotate(90deg);
+	-ms-transform: rotate(90deg);
+	transform: rotate(90deg);
+}
+
+#about {
+	left: 1200px;
+}
+
+#designed {
+	left: 2200px;
+	top: 900px;
+}
+
+#developed {
+	left: 800px;
+	top: 1200px;
+}
+
+#contact {
+	left: -900px;
+	top: 900px;
+}
+
+nav {
+	position: fixed;
+}
+
+nav ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	text-align: left;
+}
+
+nav a {
+	color: #fff;	
+}
